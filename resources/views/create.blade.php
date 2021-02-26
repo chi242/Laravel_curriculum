@@ -9,6 +9,7 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+        <a>aaa</a>
         <form action="/posts" method="POST">
             @csrf
             <div class="title">
