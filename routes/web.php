@@ -29,3 +29,5 @@ Route::post('/posts', 'App\Http\Controllers\PostController@store');
 Route::get('/posts/{post}/edit', 'App\Http\Controllers\PostController@edit');
 
 Route::put('/posts/{post}', 'App\Http\Controllers\PostController@update');
+
+Route::delete('/posts/{post}', 'App\Http\Controllers\PostController@destroy');
