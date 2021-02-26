@@ -11,11 +11,16 @@
         <h1 class="title">
               {{ $post->title }}
         </h1>
-           <form action="/posts/{{ $post->id }}" id="form_{{$post->id}}" method="POST" >
+          <!-- <form action="/posts/{{ $post->id }}" id="form_{{$post->id}}" method="POST" >
             @csrf
             @method('DELETE')
             <input type="submit" style="display:none">
             <p class="delete">[<span onclick = "return deletePost(this);">delete</span>]</p>
+        </form> -->
+        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="POST" style="display:inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit">delete</button> 
         </form>
 
         <div class='content'>
@@ -26,7 +31,9 @@
             <div>
                 <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
             </div>
-            
+            <div>
+                <p>{{ $post->created_at}}</p>
+            </div>
             <div class="footer">
                 <a href="/">戻る</a>
             </div>
@@ -42,3 +49,4 @@
         
     </body>
 </html>
+

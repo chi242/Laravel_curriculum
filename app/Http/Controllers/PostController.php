@@ -43,7 +43,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
-    public function destroy(Post $post)
+    public function delete(Post $post)
     {
     $post->delete();
         return redirect('/posts');
@@ -60,7 +60,7 @@ class UserRepository
             'title' => 'This is body2',
             'created_at' => 'now()',
             'created_at' => 'now()',
-            'deleted_at' => 'NULL',
+            'deleted_at' => 'now()',
         ]);
          $posts->save();
     }
