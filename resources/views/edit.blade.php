@@ -10,8 +10,9 @@
     <body>
         <h1>編集画面</h1>
         <form action="/posts/{{ $post->id}} " method="POST">
-           @method('PUT')
+           
         　 @csrf
+        　 @method('PUT')
             <div class="title">
                 <h2>Title</h2>
                   <input type="text" name="post[title]" placeholder="タイトル"　value="{{ $post->title }}"　>
